@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة فودافون </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FF0000; /* الخلفية الحمراء */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .input-group input:focus {
+            border-color: #4CAF50;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .vodafone-logo {
+            width: 300px; /* تغيير الحجم */
+            height:auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    
+
+        <!-- شعار فودافون -->
+        <img src="fo.jpg" class="vodafone-logo">
+        <h2>سجل هنا واكسب معانا 4 جيجا صالحين لمدة اسبوع</h2>
+        <form id="registrationForm">
+            <div class="input-group">
+                <label for="email">البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+            </div>
+            <div class="input-group">
+                <label for="code">الرمز</label>
+                <input type="text" id="code" name="code" placeholder="أدخل الرمز" required>
+            </div>
+            <button type="submit">تسجيل</button>
+            <div id="error-message" class="error"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // لمنع الإرسال التلقائي للنموذج
+
+            // جمع البيانات المدخلة
+            const email = document.getElementById('email').value;
+            const code = document.getElementById('code').value;
+
+            // التحقق من صحة المدخلات
+            if (email === '' || code === '') {
+                document.getElementById('error-message').textContent = 'يرجى ملء جميع الحقول.';
+                return;
+            }
+
+            // إرسال البيانات عبر البريد الإلكتروني أو قاعدة بيانات (في المثال هنستخدم جافا سكربت فقط)
+            alert('تم التسجيل بنجاح!');
+
+            // تنظيف الحقول بعد التسجيل
+            document.getElementById('email').value = '';
+            document.getElementById('code').value = '';
+        });
+    </script>
+
+</body>
+</html>
+
+
+
